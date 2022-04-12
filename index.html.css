@@ -1,0 +1,281 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+.app-name {
+  display: flex;
+  background-color: #ffffff;
+  align-items: center;
+  justify-content: space-between;
+  color: #dc2802;
+  height: inherit;
+  padding-top: 40px;
+  padding-left: 70px;
+  text-transform: uppercase;
+  font-weight: 1px;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.app-name h3 {
+  font-family: cursive;
+  font-size: 20px;
+}
+
+.navbar {
+  z-index: 5;
+  background-color: #ffffff;
+}
+
+.navbar ul {
+  display: flex;
+  background-color: #ffffff;
+  color: #000000;
+  width: 100%;
+  font-size: 18px;
+  padding: 0 30px;
+  position: inherit;
+  left: 0;
+  font-family: "Roboto";
+}
+
+.navbar ul li {
+  padding: 10px 20px;
+}
+
+.navbar ul {
+  float: right;
+  list-style: none;
+  height: inherit;
+  line-height: inherit;
+  padding: 0 50px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #000;
+  cursor: pointer;
+}
+
+.navbar ul li a {
+  display: block;
+  text-align: center;
+  min-width: 120px;
+  padding: 0 30px;
+}
+
+.navbar ul li a:hover {
+  color: #dc2802;
+}
+
+.header-container {
+  width: 100%;
+  background-size: contain;
+  color: white;
+}
+
+video {
+  width: 100%;
+  /* height: 40%; */
+  position: absolute;
+  right: 0;
+  object-fit: cover;
+  position: relative;
+  z-index: -1;
+}
+
+#video {
+  height: 40%;
+  height: 600px;
+}
+
+.header-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+.heading-primary {
+  font-size: 3.5rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-top: 100px;
+}
+
+#restaurant {
+  color: #da6b1d;
+  font-weight: 800;
+  font-size: 3.5rem;
+}
+
+.lead {
+  font-size: 3.9rem;
+  font-weight: 600;
+  letter-spacing: 4px;
+}
+
+.book-now:visited,
+.book-now:link {
+  text-decoration: none;
+  display: inline-block;
+  color: white;
+  font-size: 2rem;
+  padding: 2rem;
+  margin-top: 4rem;
+  border: 1px solid white;
+  border-radius: 100px;
+  transition: all 0.3s ease;
+  box-shadow: 0 1rem 1rem rgba(240, 107, 55, 0.1);
+  text-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.6);
+}
+
+.book-now:hover {
+  background-color: #da6b1d;
+  border: 1px solid white;
+}
+
+.head-image {
+  justify-content: space-between;
+}
+
+.delivery-head {
+  padding: 50px;
+  background-color: #f9f3eb;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding-left: 50px;
+}
+
+.delivery {
+  background-color: #ffffff;
+  width: 350px;
+  height: 400px;
+  text-align: center;
+  color: #ffffff;
+  padding-top: 20px;
+  border-radius: 20px;
+}
+
+.delivery h3 {
+  color: #010019;
+  padding: 20px;
+}
+
+.delivery p {
+  color: #000000;
+  padding-left: 15px;
+}
+
+.start-year {
+  color: #dc2802;
+  background-color: #f9f3eb;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.start-year h1 {
+  font-size: 60px;
+  text-shadow: 2px 2px;
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #fbe791;
+}
+
+.fav-head {
+  height: 600px;
+  background-color: #ffffff;
+  width: 85%;
+  margin-left: 7%;
+  height: 600px;
+  padding-top: 50px;
+  padding-right: 40px;
+}
+
+.fav-head p {
+  text-align: center;
+  color: #000000;
+  padding-bottom: 30px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.fav-menu {
+  display: flex;
+  padding-left: 90px;
+}
+
+.fav-menu h3 {
+  color: #000000;
+  padding-top: 10px;
+}
+
+.fav-button {
+  margin-top: 50px;
+}
+
+.fav-button a {
+  padding-top: 19px;
+  background-color: #dc2802;
+  color: #ffffff;
+  padding-bottom: 19px;
+  cursor: pointer;
+  margin-left: 90px;
+  text-decoration: none;
+}
+
+.fav-button a:hover {
+  background-color: #ffffff;
+  color: #dc2802;
+  border: 2px solid #dc2802;
+}
+
+/* button */
+.full-menu-btn {
+  padding: 10px 20px;
+  background: #df2222;
+  color: #ffffff;
+  border: 1px solid transparent;
+  font-size: 20px;
+  outline: none;
+  border-radius: 10px;
+  transition: all 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
+.full-menu-button:hover {
+  padding: 10px 20px;
+  background: #ffffff;
+  color: #df2222;
+  border: 1px solid #df2222;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+/* button */
+
+/* Footer */
+footer {
+  background-color: #dc2802;
+  width: 100vw;
+  height: 30px;
+}
+
+footer p {
+  padding-top: 10px;
+  padding-bottom: 15px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* End Footer */

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+        font-family: "Roboto", sans-serif;
+        box-sizing: border-box;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      .app-name {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #dc2802;
+        height: inherit;
+        padding-top: 40px;
+        padding-left: 70px;
+        text-transform: uppercase;
+        font-weight: 1px;
+        letter-spacing: 1px;
+      }
+
+      .navbar ul {
+        display: flex;
+        background-color: #ffffff;
+        color: #000000;
+        width: 100%;
+        font-size: 18px;
+        padding: 0 30px;
+        position: inherit;
+        left: 0;
+        font-family: "Roboto";
+      }
+
+      .navbar ul li {
+        padding: 10px 20px;
+      }
+
+      .navbar ul {
+        float: right;
+        list-style: none;
+        height: inherit;
+        line-height: inherit;
+        padding: 0 50px;
+      }
+
+      .navbar a {
+        text-decoration: none;
+        color: #000;
+      }
+
+      .navbar ul li a {
+        display: block;
+        text-align: center;
+        min-width: 120px;
+        padding: 0 30px;
+      }
+
+      .navbar ul li a:hover {
+        color: #dc2802;
+      }
+
+      .image-menu {
+        background-image: url(images/hero.jpg);
+        background-position: center;
+        background-size: cover;
+        font-family: sans-serif;
+        margin-top: 40px;
+      }
+
+      .menu-item {
+        margin-top: 40px;
+        margin-left: 100px;
+      }
+
+      .menu-list {
+        border-radius: 15px 15px 0px 0px;
+        width: 70%;
+        height: fit-content;
+        margin: auto;
+      }
+
+      .menu-list h3 {
+        color: #dc2602;
+        margin-bottom: 20px;
+        padding-top: 30px;
+        padding-left: 30px;
+      }
+
+      .menu-list h4 {
+        color: #000000;
+        margin-bottom: 10px;
+        padding-left: 80px;
+      }
+
+      .price {
+        color: #dc2802;
+        padding-right: 30px;
+      }
+
+      .menu-name {
+        width: 800px;
+        background-color: #dc2802;
+        margin: auto;
+        color: #ffffff;
+        padding: 10px 0px 10px 0px;
+        margin-top: 30px;
+        font-size: 20px;
+        text-align: center;
+        border-radius: 15px 15px 0px 0px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script>
+      new Vue({
+        el: "#demo",
+        template: `<!-- header -->
+<header>
+  <div class="app-name">
+    <h3>
+      Da Crust <sup><img src="images/star.png" alt="" width="15"/></sup>
+    </h3>
+
+    <!-- navbar -->
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="book.html">Order Online</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<!-- menu -->
+
+<section>
+  <div class="image-menu">
+    <div class="menu-name">
+      <h1>Menu List</h1>
+    </div>
+    <div class="menu-list">
+      <h3>CHICKEN SANDWICH</h3>
+      <h4>
+        Classic Chicken Sandwich
+        ..............................................................................................................
+        $30
+      </h4>
+      <h4>
+        Mega Chicken Sandwich
+        ................................................................................................
+        $45
+      </h4>
+      <h4>
+        Sausage Muffin........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Egg Muffin........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Mega Chicken Sandwich........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Mega Chicken Sandwich........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Mega Chicken Sandwich........
+        ................................................................................................$30
+      </h4>
+      <!-- Tenders -->
+      <h3>TENDERS</h3>
+      <h4>
+        Chicken Tenders -
+        6pcs........................................................................................................$30
+      </h4>
+      <h4>
+        Chicken Tenders -
+        9pcs........................................................................................................$30
+      </h4>
+      <h4>
+        Chicken Box
+        ........................................................................................................$30
+      </h4>
+
+      <h4>
+        Chicken
+        Strips........................................................................................................$30
+      </h4>
+      <h4>
+        Chicken
+        Nuggets........................................................................................................$30
+      </h4>
+      <!-- Wings -->
+      <h3>WINGS</h3>
+      <h4>
+        Hot &amp; Spicy Wings -
+        6pcs........................................................................................................$30
+      </h4>
+      <h4>
+        Hot &amp; Spicy Wings -
+        9pcs........................................................................................................$30
+      </h4>
+      <!-- Special Offers -->
+      <h3>SPECIAL OFFERS</h3>
+      <h4>
+        Da Crust Combo
+        ........................................................................................................$30
+      </h4>
+      <h4>
+        Family Meal........
+        ................................................................................................$30
+      </h4>
+      <!-- Sides -->
+      <h3>SIDES</h3>
+      <h4>
+        French Fries........ ....................
+        ........................................................................................$30
+      </h4>
+      <h4>
+        Mac &amp; Cheese........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Wedges........
+        ................................................................................................$30
+      </h4>
+      <h4>Coleslaw..............................................$30</h4>
+      <h4>
+        Mix Greens...............
+        ..............................................$30
+      </h4>
+      <h4>
+        Pizza
+        Melters........................................................................................................$30
+      </h4>
+      <!-- Dessert -->
+      <h3>DESSERTS</h3>
+      <h4>
+        SPECIAL Bubble Waffle........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Banana Milkshake........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Chocolate Milkshake........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Strawberry Milkshake........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Vanilla Milkshake........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Milkshake........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Cone........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Apple Pie........
+        ................................................................................................$30
+      </h4>
+      <!-- drinks -->
+      <h3>COLD DRINKS</h3>
+      <h4>
+        Cocacola &amp; Zero........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Fanta........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Sprite........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Liptea........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Fruit Shoot........
+        ................................................................................................$30
+      </h4>
+      <h4>
+        Cappy Apple........
+        ................................................................................................$30
+      </h4>
+    </div>
+  </div>
+</section>
+`
+      });
+    </script>
+  </body>
+</html>

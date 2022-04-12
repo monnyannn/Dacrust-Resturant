@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- favicon -->
+    <link type="image/x-icon" href="//www.wix.com/favicon.ico" rel="shortcut icon">
+
+    <!-- Google fonts -->
+    <link rel="stylesheet" href=" https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+        rel="stylesheet">
+
+
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: "Roboto", sans-serif;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .app-name {
+            display: flex;
+            background-color: #ffffff;
+            align-items: center;
+            justify-content: space-between;
+            color: #DC2802;
+            height: inherit;
+            padding-top: 40px;
+            padding-left: 70px;
+            text-transform: uppercase;
+            font-weight: 1px;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+
+        .app-name h3 {
+            font-family: cursive;
+            font-size: 20px;
+
+        }
+
+        .navbar {
+            z-index: 5;
+            background-color: #ffffff;
+        }
+
+        .navbar ul {
+            display: flex;
+            background-color: #ffffff;
+            color: #000000;
+            width: 100%;
+            font-size: 18px;
+            padding: 0 30px;
+            position: inherit;
+            left: 0;
+            font-family: "Roboto";
+        }
+
+        .navbar ul li {
+            padding: 10px 20px;
+        }
+
+        .navbar ul {
+            float: right;
+            list-style: none;
+            height: inherit;
+            line-height: inherit;
+            padding: 0 50px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #000;
+            cursor: pointer;
+        }
+
+        .navbar ul li a {
+            display: block;
+            text-align: center;
+            min-width: 120px;
+            padding: 0 30px;
+        }
+
+        .navbar ul li a:hover {
+            color: #DC2802;
+        }
+
+        .header-container {
+            width: 100%;
+            background-size: contain;
+            color: white;
+        }
+
+        video {
+            width: 100%;
+            /* height: 40%; */
+            position: absolute;
+            right: 0;
+            object-fit: cover;
+            position: relative;
+            z-index: -1;
+        }
+
+        #video {
+            height: 40%;
+            height: 600px;
+        }
+
+        .header-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            text-transform: uppercase;
+            color: white;
+        }
+
+        .heading-primary {
+            font-size: 3.5rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            margin-top: 100px;
+        }
+
+        #restaurant {
+            color: #da6b1d;
+            font-weight: 800;
+            font-size: 3.5rem;
+        }
+
+        .lead {
+            font-size: 3.9rem;
+            font-weight: 600;
+            letter-spacing: 4px;
+        }
+
+        .book-now:visited,
+        .book-now:link {
+            text-decoration: none;
+            display: inline-block;
+            color: white;
+            font-size: 2rem;
+            padding: 2rem;
+            margin-top: 4rem;
+            border: 1px solid white;
+            border-radius: 100px;
+            transition: all .3s ease;
+            box-shadow: 0 1rem 1rem rgba(240, 107, 55, .1);
+            text-shadow: 0 1rem 1rem rgba(0, 0, 0, .6);
+        }
+
+        .book-now:hover {
+            background-color: #da6b1d;
+            border: 1px solid white;
+        }
+
+        .head-image {
+            justify-content: space-between;
+        }
+
+        .delivery-head {
+            padding: 50px;
+            background-color: #F9F3EB;
+            display: flex;
+            justify-content: space-evenly;
+            width: 100%;
+            padding-left: 50px;
+        }
+
+        .delivery {
+            background-color: #ffffff;
+            width: 350px;
+            height: 400px;
+            text-align: center;
+            color: #ffffff;
+            padding-top: 20px;
+            border-radius: 20px;
+        }
+
+        .delivery h3 {
+            color: #010019;
+            padding: 20px;
+        }
+
+        .delivery p {
+            color: #000000;
+            padding-left: 15px;
+        }
+
+        .start-year {
+            color: #DC2802;
+            background-color: #F9F3EB;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .start-year h1 {
+            font-size: 60px;
+            text-shadow: 2px 2px;
+            text-shadow: 0 0 3px #FF0000, 0 0 5px #FBE791
+        }
+
+        .fav-head {
+            height: 600px;
+            background-color: #ffffff;
+            width: 85%;
+            margin-left: 7%;
+            height: 600px;
+            padding-top: 50px;
+            padding-right: 40px;
+        }
+
+        .fav-head p {
+            text-align: center;
+            color: #000000;
+            padding-bottom: 30px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .fav-menu {
+            display: flex;
+            padding-left: 90px;
+        }
+
+        .fav-menu h3 {
+            color: #000000;
+            padding-top: 10px;
+        }
+
+        .fav-button {
+            margin-top: 50px;
+
+        }
+
+        .fav-button a {
+            padding-top: 19px;
+            background-color: #DC2802;
+            color: #ffffff;
+            padding-bottom: 19px;
+            cursor: pointer;
+            margin-left: 90px;
+            text-decoration: none;
+        }
+
+        .fav-button a:hover {
+            background-color: #ffffff;
+            color: #DC2802;
+            border: 2px solid #DC2802;
+        }
+
+        /* button */
+        .full-menu-btn {
+            padding: 10px 20px;
+            background: #DF2222;
+            color: #ffffff;
+            border: 1px solid transparent;
+            font-size: 20px;
+            outline: none;
+            border-radius: 10px;
+            transition: all .8s;
+            transition-timing-function: ease-in-out;
+        }
+
+        .full-menu-button:hover {
+            padding: 10px 20px;
+            background: #ffffff;
+            color: #DF2222;
+            border: 1px solid #DF2222;
+            border-radius: 10px;
+            font-size: 20px;
+        }
+
+        /* button */
+
+        /* Footer */
+        footer {
+            background-color: #DC2802;
+            width: 100vw;
+            height: 30px;
+        }
+
+        footer p {
+            padding-top: 10px;
+            padding-bottom: 15px;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        /* End Footer */
+    </style>
+</head>
+
+<body>
+    <!-- header -->
+    <header>
+        <div class="app-name">
+            <h3>Da Crust <sup><img src="images/star.png" alt="" width="15"></sup></h3>
+
+            <!-- navbar -->
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="menu.html">Menu</a></li>
+                    <li><a href="book.html">Order Online</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- End header -->
+
+    <!-- content slider -->
+    <div class="header-container">
+        <div class="video">
+            <video loop muted autoplay id="video">
+                <source src="video2.mp4" type="video/mp4">
+                This type of file is not supported
+            </video>
+        </div>
+        <div class="header-box">
+            <h1 class="heading-primary">
+                Open <br><span id="restaurant">For Delivery</span><br> and Pickup
+            </h1>
+            <p class="lead">Get am, as e dey hot!</p>
+            <a href="book.html" class="book-now">Book now</a>
+        </div>
+    </div>
+
+    <!-- Delivery Types -->
+    <section>
+        <div>
+            <div class="delivery-head">
+                <div class="delivery">
+                    <img src="images/phone.png" alt="" width="100">
+                    <h3>ORDER ON THE GO</h3>
+                    <p>I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you.</p>
+
+                </div>
+                <div class="delivery">
+                    <img src="images/doorstep-delivery.png" alt="" width="100">
+                    <h3>DOORSTEP DELIVERY</h3>
+                    <p>I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you.</p>
+
+                </div>
+                <div class="delivery">
+                    <img src="images/phone.png" alt="" width="100">
+                    <h3>CURBSIDE PICKUP</h3>
+                    <p>I'm a paragraph. Click here to add your own text and edit me. Let your users get to know you.</p>
+                </div>
+            </div>
+            <!-- End Delivery type  -->
+
+            <div class="start-year">
+                <h1>ORIGINAL RECIPE <br> SINCE 2003</h1>
+
+                <!-- Favorite Items -->
+                <div class="fav-head">
+                    <div>
+                        <p> ALL TIME FAVOURITES</p>
+                    </div>
+                    <div class="fav-menu">
+                        <div>
+                            <img src="images/WhatsApp Image 2022-01-27 at 6.42.53 PM.jpeg" alt="" width="300">
+                            <h3>CRISPY CHICKEN SANDWICH</h3>
+                        </div>
+                        <div>
+                            <img src="images/waffle-strawberry.jpeg" alt="" width="300">
+                            <h3>WAFFLE STRAWBERRY</h3>
+                        </div>
+                        <div>
+                            <img src="images/03.jpg" alt="" width="300">
+                            <h3>CRISPY CHICKEN WINGS</h3>
+                        </div>
+                        <div>
+                            <img src="images/02.jpg" alt="" width="300">
+                            <h3>FRENCH FRIES</h3>
+                        </div>
+                    </div>
+                    <div class="fav-button">
+                        <a role="button" href="menu.html" class="full-menu-btn">Full Menu</a>
+                    </div>
+                </div>
+                <!-- End Favorite Items -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            &copy; Copyright 2022
+        </p>
+
+    </footer>
+    <!-- End Footer -->
+
+</body>
+
+</html>

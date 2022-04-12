@@ -1,0 +1,113 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.app-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #dc2802;
+  height: inherit;
+  padding-top: 40px;
+  padding-left: 70px;
+  text-transform: uppercase;
+  font-weight: 1px;
+  letter-spacing: 1px;
+}
+
+.navbar ul {
+  display: flex;
+  background-color: #ffffff;
+  color: #000000;
+  width: 100%;
+  font-size: 18px;
+  padding: 0 30px;
+  position: inherit;
+  left: 0;
+  font-family: "Roboto";
+}
+
+.navbar ul li {
+  padding: 10px 20px;
+}
+
+.navbar ul {
+  float: right;
+  list-style: none;
+  height: inherit;
+  line-height: inherit;
+  padding: 0 50px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar ul li a {
+  display: block;
+  text-align: center;
+  min-width: 120px;
+  padding: 0 30px;
+}
+
+.navbar ul li a:hover {
+  color: #dc2802;
+}
+
+.image-menu {
+  background-image: url(images/hero.jpg);
+  background-position: center;
+  background-size: cover;
+  font-family: sans-serif;
+  margin-top: 40px;
+}
+
+.menu-item {
+  margin-top: 40px;
+  margin-left: 100px;
+}
+
+.menu-list {
+  border-radius: 15px 15px 0px 0px;
+  width: 70%;
+  height: fit-content;
+  margin: auto;
+}
+
+.menu-list h3 {
+  color: #dc2602;
+  margin-bottom: 20px;
+  padding-top: 30px;
+  padding-left: 30px;
+}
+
+.menu-list h4 {
+  color: #000000;
+  margin-bottom: 10px;
+  padding-left: 80px;
+}
+
+.price {
+  color: #dc2802;
+  padding-right: 30px;
+}
+
+.menu-name {
+  width: 800px;
+  background-color: #dc2802;
+  margin: auto;
+  color: #ffffff;
+  padding: 10px 0px 10px 0px;
+  margin-top: 30px;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 15px 15px 0px 0px;
+}

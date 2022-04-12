@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Check</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        font-size: 62.5%;
+    }
+
+    body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: rgb(27, 27, 27);
+        overflow-x: hidden;
+    }
+
+    .header {
+        height: 90vh;
+        position: relative;
+    }
+
+    .navbar {
+        height: 110px;
+        width: 100%;
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 40px;
+        z-index: 40;
+        position: fixed;
+    }
+
+    .navbar-box {
+        display: flex;
+        align-items: center;
+        font-size: 2rem;
+        color: white;
+    }
+
+    .heading-text {
+        font-size: 3.5rem;
+    }
+
+    .navbar-list {
+        list-style: none;
+        font-size: 2rem;
+    }
+
+    .navbar-item {
+        display: inline-block;
+    }
+
+    .navbar-link:visited,
+    .navbar-link:link {
+        text-decoration: none;
+        color: white;
+        padding: 3rem;
+        transition: all .2s ease;
+    }
+
+    .navbar-link:hover {
+        background-color: #da6b1d;
+        color: white;
+    }
+
+    .navbar-link-book:visited,
+    .navbar-link-book:link {
+        text-decoration: none;
+        color: white;
+        padding: 2rem 3.5rem;
+        border: 1px solid #da6b1d;
+        border-radius: 200px;
+        box-shadow: 0 0 1rem rgba(236, 118, 40, .5);
+        text-shadow: 0 .3rem 1rem rgba(255, 255, 255, .5);
+        transition: all .4s ease;
+    }
+
+    .navbar-link-book:hover {
+        background-color: #da6b1d;
+        color: white;
+    }
+
+    .toggle {
+        height: 5rem;
+        width: 5rem;
+        display: none;
+    }
+
+    .toggle div {
+        height: 4px;
+        width: 100px;
+        background-color: white;
+        margin: 1rem;
+    }
+
+    .header-container {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        color: white;
+    }
+
+    .video {
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, .4);
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    #video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: relative;
+        z-index: -1;
+    }
+
+    .header-box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        text-transform: uppercase;
+        color: white;
+    }
+
+    .heading-primary {
+        font-size: 6.5rem;
+        font-weight: 600;
+        letter-spacing: 3px;
+    }
+
+    #restaurant {
+        color: #da6b1d;
+        font-weight: 800;
+        font-size: 8rem;
+    }
+
+    .lead {
+        font-size: 1.9rem;
+        font-weight: 600;
+        letter-spacing: 4px;
+    }
+
+    .book-now:visited,
+    .book-now:link {
+        text-decoration: none;
+        display: inline-block;
+        color: white;
+        font-size: 2rem;
+        padding: 2rem;
+        margin-top: 4rem;
+        border: 1px solid white;
+        border-radius: 100px;
+        transition: all .3s ease;
+        box-shadow: 0 1rem 1rem rgba(240, 107, 55, .1);
+        text-shadow: 0 1rem 1rem rgba(0, 0, 0, .6);
+    }
+
+    .book-now:hover {
+        background-color: #da6b1d;
+        border: 1px solid white;
+        box-shadow: 0 0 2rem rgba(240, 107, 55, .8);
+    }
+
+    /* Menu Section*/
+    .menu {
+        width: 100%;
+        padding: 10rem 5rem;
+        background-image: linear-gradient(to right bottom, rgb(255, 81, 0), rgba(255, 0, 0, .5));
+    }
+
+    .menu-heading {
+        font-size: 12rem;
+        text-align: center;
+        text-shadow: 0 0 1rem rgba(0, 0, 0, .9);
+        text-transform: uppercase;
+        color: white;
+        font-weight: 800;
+        margin-bottom: 4rem;
+    }
+
+    .menu-grid {
+        display: grid;
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 2rem;
+    }
+
+    .heading-secondary {
+        font-size: 7rem;
+        text-transform: uppercase;
+        color: white;
+        text-align: center;
+    }
+
+    .menu-img {
+        height: 50%;
+        width: 100%;
+        background-size: cover;
+        background-position: left;
+        background-image: url(images/03.jpg);
+    }
+
+    .menu-container {
+        width: 100%;
+        height: 50rem;
+        background-color: white;
+        border-radius: 5px;
+        overflow: hidden;
+        box-shadow: 0 0 2rem rgba(0, 0, 0, .2);
+        transition: all .4s ease;
+
+    }
+
+    .menu-container:hover {
+        box-shadow: 0 0 5rem rgba(0, 0, 0, .4);
+        transform: scale(1.07);
+    }
+
+    .menu-p {
+        font-size: 1.4rem;
+        padding: 1rem;
+        text-align: center;
+    }
+
+    .menu-title {
+        font-size: 3rem;
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    .price {
+        font-size: 3rem;
+        margin-top: 1rem;
+        text-align: center;
+        color: #da6b1d;
+        text-shadow: 0 .4rem 2rem rgba(0, 0, 0, .4);
+    }
+
+    /* Contact Section */
+    .contact {
+        padding: 15rem 10rem;
+        width: 100%;
+        background-image: url(images/whitebg.jpg);
+        background-size: cover;
+    }
+
+    .contact-content {
+        height: auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        border-radius: 10px;
+        box-shadow: 0 0 3rem rgba(0, 0, 0, 0.9);
+    }
+
+    .left {
+        background-color: #da6b1d;
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+
+    .right {
+        background-color: #ffffff;
+        width: 100%;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        position: relative;
+    }
+
+    .right-image {
+        height: 22rem;
+        width: 22rem;
+        position: absolute;
+        top: -11rem;
+        left: -11rem;
+    }
+
+    .contact-form {
+        padding: 5rem;
+        width: 100%;
+    }
+
+    .form {
+        width: 100%;
+        text-align: center;
+        padding: 3rem 0;
+
+    }
+
+    .form-group {
+        position: relative;
+        padding: 2rem;
+        width: 100%;
+    }
+
+    .contact-heading {
+        font-size: 6rem;
+        color: #da6b1d;
+    }
+
+    .contact-btn:link,
+    .contact-btn:visited {
+        text-decoration: none;
+        display: inline-block;
+        border: 1px solid #da6b1d;
+        background-color: transparent;
+        color: #da6b1d;
+        outline: none;
+        font-size: 3.4rem;
+        border-radius: 10px;
+        margin-top: 2rem;
+        padding: 1rem 2rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, .4);
+        transition: all .4s ease;
+    }
+
+    .contact-btn:hover {
+        background-color: #da6b1d;
+        box-shadow: 0 .3rem 1rem rgba(0, 0, 0, .6);
+        color: white;
+    }
+
+    .input {
+        width: 98%;
+        outline: none;
+        border: 1px solid #da6b1d;
+        background-color: #fff;
+        height: 7rem;
+        font-size: 2rem;
+        border-radius: 1000px;
+        text-indent: 5px;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, .2);
+        padding: 1rem;
+        transition: all .4s ease;
+    }
+
+    .input:focus {
+        width: 100%;
+    }
+
+    .input:valid {
+        border-left: 10px solid green;
+    }
+
+    .input:invalid {
+        border-left: 10px solid red;
+    }
+
+    .textarea {
+        resize: none;
+        height: 15rem;
+        border-radius: 40px;
+        padding: 2rem;
+    }
+
+    .form-group label {
+        position: absolute;
+        top: 46px;
+        left: 61px;
+        font-size: 1.4rem;
+        background-color: white;
+        visibility: hidden;
+        transition: top .4s ease, left .4s ease;
+    }
+
+    .input:focus~label {
+        top: 11px;
+        left: 61px;
+        padding: 0 1rem;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, .4);
+        visibility: visible;
+        border-radius: 10px;
+    }
+
+    .input:focus::placeholder {
+        color: transparent;
+    }
+
+    .left {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .maps-title {
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+    }
+
+    .review {
+        padding: 15rem;
+        width: 100%;
+        background-color: #da6b1d;
+
+    }
+
+    .review-heading {
+        color: white;
+        font-size: 5rem;
+        text-align: center;
+        margin-bottom: 5rem;
+        position: relative;
+    }
+
+    .review-content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        align-items: center;
+    }
+
+    .review1 {
+        display: flex;
+        position: relative;
+        align-items: right;
+        color: white;
+        padding: 4rem;
+        box-shadow: 0 .3rem 1rem rgba(0, 0, 0, .4);
+        margin: 4rem;
+    }
+
+    review1:not(:last-child) {
+        margin-bottom: 5rem;
+    }
+
+    .review-logo {
+        height: 15rem;
+        border-radius: 50%;
+        background-image: url(images/profile.svg);
+        background-size: cover;
+        min-width: 16rem;
+    }
+
+    .review-info {
+        margin-left: 2rem;
+        min-width: 16rem;
+    }
+
+    .name {
+        font-size: 2rem;
+        margin: .6rem 0;
+    }
+
+    .review {
+        font-size: 1.6rem;
+        margin-left: 2rem;
+    }
+
+    .review-star .fa {
+        color: white;
+    }
+
+    .review-star .checked {
+        color: rgb(0, 255, 0);
+    }
+</style>
+
+<body>
+    <section class="header">
+        <nav class="navbar">
+            <div class="navbar-box">
+                <h3 class="heading-text">Da Crust</h3>
+            </div>
+
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a href="#" class="navbar-link">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="navbar-link">Menu</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="navbar-link">About</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="navbar-link">Contact</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#" class="navbar-link-book">Book</a>
+                </li>
+            </ul>
+            <div class="toggle">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+
+        <div class="header-container">
+            <div class="video">
+                <video loop muted autoplay id="video">
+                    <source src="images/video.mp4" type="video/mp4">
+                    This type of file is not supported
+                </video>
+            </div>
+            <div class="header-box">
+                <h1 class="heading-primary">
+                    Open <br><span id="restaurant">For Delivery</span><br> and Pickup
+                </h1>
+                <p class="lead">Get am, as e dey hot!</p>
+                <a href="" class="book-now">Book now</a>
+            </div>
+        </div>
+    </section>
+    <!-- Menu Section -->
+    <section class="menu">
+        <div class="container">
+            <div class="menu-heading">Menu</div>
+            <div class="menu-grid">
+                <div class="menu-hold">
+                    <div class="menu-container">
+                        <div class="menu-img">
+                            &nbsp;
+                        </div>
+                        <h1 class="menu-title">Chicken Pizza</h1>
+                        <p class="menu-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nesciunt
+                            rerum repellendus a.
+                            Corporis, odit. Obcaecati sapiente illo et unde mollitia corporis, nostrum ipsum labore.
+                            Architecto, deleniti voluptates! Earum, neque!</p>
+                        <h3 class="price">$23</h3>
+                    </div>
+
+                </div>
+                <div class="menu-hold">
+                    <div class="menu-container">
+                        <div class="menu-img">
+                            &nbsp;
+                        </div>
+                        <h1 class="menu-title">Fried Chips</h1>
+                        <p class="menu-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nesciunt
+                            rerum repellendus a.
+                            Corporis, odit. Obcaecati sapiente illo et unde mollitia corporis, nostrum ipsum labore.
+                            Architecto, deleniti voluptates! Earum, neque!</p>
+                        <h3 class="price">$45</h3>
+                    </div>
+
+                </div>
+                <div class="menu-hold">
+                    <div class="menu-container">
+                        <div class="menu-img">
+                            &nbsp;
+                        </div>
+                        <h1 class="menu-title">Egyptian Sallad</h1>
+                        <p class="menu-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nesciunt
+                            rerum repellendus a.
+                            Corporis, odit. Obcaecati sapiente illo et unde mollitia corporis, nostrum ipsum labore.
+                            Architecto, deleniti voluptates! Earum, neque!</p>
+                        <h3 class="price">$44</h3>
+                    </div>
+                </div>
+                <div class="menu-hold">
+                    <div class="menu-container">
+                        <div class="menu-img">
+                            &nbsp;
+                        </div>
+                        <h1 class="menu-title">Pumpkin Catfish</h1>
+                        <p class="menu-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nesciunt
+                            rerum repellendus a.
+                            Corporis, odit. Obcaecati sapiente illo et unde mollitia corporis, nostrum ipsum labore.
+                            Architecto, deleniti voluptates! Earum, neque!</p>
+                        <h3 class="price">$44</h3>
+                    </div>
+                </div>
+                <div class="menu-hold">
+                    <div class="menu-container">
+                        <div class="menu-img">
+                            &nbsp;
+                        </div>
+                        <h1 class="menu-title">Fried Cowtail</h1>
+                        <p class="menu-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nesciunt
+                            rerum repellendus a.
+                            Corporis, odit. Obcaecati sapiente illo et unde mollitia corporis, nostrum ipsum labore.
+                            Architecto, deleniti voluptates! Earum, neque!</p>
+                        <h3 class="price">$44</h3>
+                    </div>
+
+                </div>
+                <div class="menu-hold">
+                    <div class="menu-container">
+                        <div class="menu-img">
+                            &nbsp;
+                        </div>
+                        <h1 class="menu-title">Chicken Pizza</h1>
+                        <p class="menu-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nesciunt
+                            rerum repellendus a.
+                            Corporis, odit. Obcaecati sapiente illo et unde mollitia corporis, nostrum ipsum labore.
+                            Architecto, deleniti voluptates! Earum, neque!</p>
+                        <h3 class="price">$44</h3>
+                    </div>
+
+                </div>
+                <div class="menu-hold">
+                    <div class="menu-container">
+                        <div class="menu-img">
+                            &nbsp;
+                        </div>
+                        <h1 class="menu-title">Chicken Pizza</h1>
+                        <p class="menu-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nesciunt
+                            rerum repellendus a.
+                            Corporis, odit. Obcaecati sapiente illo et unde mollitia corporis, nostrum ipsum labore.
+                            Architecto, deleniti voluptates! Earum, neque!</p>
+                        <h3 class="price">$44</h3>
+                    </div>
+
+                </div>
+                <div class="menu-hold">
+                    <div class="menu-container">
+                        <div class="menu-img">
+                            &nbsp;
+                        </div>
+                        <h1 class="menu-title">Fish Stew</h1>
+                        <p class="menu-p">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nesciunt
+                            rerum repellendus a.
+                            Corporis, odit. Obcaecati sapiente illo et unde mollitia corporis, nostrum ipsum labore.
+                            Architecto, deleniti voluptates! Earum, neque!</p>
+                        <h3 class="price">$44</h3>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Session -->
+    <section class="contact">
+        <div class="contact-content">
+            <div class="left">
+                <div class="contact-info">
+                    <h1 class="maps-title">Find Us on Google Maps</h1>
+                </div>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d31671.16947704812!2d3.3702266!3d7.1380026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sng!4v1643322607225!5m2!1sen!2sng"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <div class="right">
+                <span><img src="images/chicken.png" alt="" class="right-image"></span>
+                <div class="contact-form">
+                    <form class="form">
+                        <div class="contact-heading">Contact-Us</div>
+                        <div class="form-group">
+                            <input type="text" class="input" id="name" placeholder="Name" required>
+                            <label for="name">Name</label>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="input" id="email" placeholder="Email" required>
+                            <label for="email">Email</label>
+                        </div>
+                        <div class="form-group">
+                            <textarea type="text" class="input textarea" placeholder="message..." required></textarea>
+                            <label for="">Message</label>
+                        </div>
+                        <a href="#" class="contact-btn">Submit</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section class="review">
+        <h1 class="review-heading">See what our visitors are saying?</h1>
+        <div class="review-content"></div>
+        <div class="review1">
+            <div class="review-logo">
+                &nbsp;
+            </div>
+            <div class="review-info">
+                <h1 class="name">Abimbola Doyin</h1>
+                <h1 class="name">3 days ago</h1>
+            </div>
+            <div class="review-box">
+                <div class="review-stars">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star "></span>
+                </div>
+                <div class="review-text"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, aliquid? Illum
+                    sed obcaecati repellendus
+                    et enim esse totam facere? Ab obcaecati modi debitis nobis accusantium vel aliquam temporibus ex
+                    veniam.</div>
+            </div>
+        </div>
+
+        <div class="review1">
+            <div class="review-logo">
+                &nbsp;
+            </div>
+            <div class="review-info">
+                <h1 class="name">Bulus Ayock</h1>
+                <h1 class="name">5 days ago</h1>
+            </div>
+            <div class="review-box">
+                <div class="review-stars">
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star checked"></span>
+                    <span class="fa fa-star "></span>
+                    <span class="fa fa-star "></span>
+                </div>
+                <div class="review-text"> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea, aliquid? Illum
+                    sed obcaecati repellendus
+                    et enim esse totam facere? Ab obcaecati modi debitis nobis accusantium vel aliquam temporibus ex
+                    veniam.</div>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>

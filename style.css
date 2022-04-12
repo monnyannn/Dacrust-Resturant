@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.head-container{
+    width: 100%;
+    height: 50vh;
+    background-color: #680909;
+    animation: mymoves 5s infinite;
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.head-container h2{
+    padding-top: 40px;
+    font-size: 30px;
+    color: #ffffff;
+}
+.head-container button{
+    margin-top: 250px;
+    margin-left: 20px;
+    width: 130px;
+    height: 40px;
+    border:1px solid #680909;;
+    border-radius: 20px;
+    color:#680909;
+    background-color: white;
+    font-weight: bold;
+}
+.head-container button:hover{
+    background-color: #680909;
+    border: 1px solid #680909;;
+    color: white;
+}
+.head-container p{
+    padding-top: 40px;
+    font-size: 15px;
+    color: #ffffff;
+    padding-left: 30px;
+}
+.head-container img{
+    width: 270px;
+    justify-content: flex-end;
+    box-shadow: 2px #000000;
+    background-blend-mode: color-burn;
+}
+
+@-webkit-keyframes mymoves{
+    from{background-color: #680909;}
+    to{background-color:teal;}
+}
+.section-container{
+    margin-top: 70px;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.section-container h1{
+    color: #680909;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-container div{
+    height: 40vh;
+    width: 20%;
+    border-radius: 50%;
+    border: 2px thick rgb(85, 16, 16);
+    background-color: rgb(85, 16, 16);
+    box-shadow: 0px 0px 10px rgb(85, 16, 16) ;
+    position: relative;
+}
+.section-container img{
+    width: 200px;
+    height: 200px;
+    transform: translateX(150px);
+    border-radius: 50%;
+    position: absolute;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(85, 16, 16) ;
+}
+.section-container h3{
+    padding-top: 100px;
+    padding-left: 70px;
+    color: #ffffff;
+    font-size: 30px;
+    text-shadow: 2px 2px #000000;
+}
+.section-container h4{
+    padding-top: 10px;
+    padding-left: 80px;
+    color: #ffffff;
+    text-shadow: 2px 2px #000000;
+}
+
+/* Tablet Landscape */
+
+@media only screen and (max-width: 768px) {
+
+    .head-container{
+         width: 100%;
+         height: 50vh;
+         background-color: #680909;
+         -webkit-animation: mymoves 5s infinite;
+         display: flex;
+         justify-content:center;
+         align-items: center;
+    }
+    .head-container img{
+        margin-top: 100px;
+        margin-right: 20px;
+         width: 200px;
+         justify-content: center;
+         box-shadow: 2px #000000;
+     }
+     .btns{
+         display: block;
+     }
+     .head-container button{
+         margin-top: 50px;
+         width: 90px;
+         height: 35px;
+         border:1px solid #ffffff;;
+         border-radius: 20px;
+         color:#680909;
+         background-color: white;
+         font-weight: bold;
+     }
+     .head-container h2{
+         margin-left: 30px;
+         padding-top: 30px;
+         font-size: 30px;
+         color: #ffffff;
+     }
+     .head-container p{
+         padding-top: 20px;
+         font-size: 15px;
+         padding-bottom: 50px;
+         color: #ffffff;
+         padding-left: 30px;
+     }
+  
+     .section-container{
+         margin-top: 70px;
+         height: 100%;
+         display: block;
+         justify-content: space-evenly;
+         margin-left: 100px;
+     } 
+ 
+     .section-container div{
+         height: 200px;
+         width: 200px;
+         margin-left: 100px;
+         margin-bottom: 30px;
+         border-radius: 50%;
+         border: 2px thick rgb(85, 16, 16);
+         background-color: rgb(85, 16, 16);
+         box-shadow: 0px 0px 10px rgb(85, 16, 16) ;
+         position: relative;
+     }
+     
+     .section-container img{
+         width: 150px;
+         height: 150px;
+         padding-bottom: 20px;
+         transform: translateX(120px);
+         border-radius: 50%;
+         position: absolute;
+         background-color: white;
+         box-shadow: 0px 0px 10px rgb(85, 16, 16) ;
+     }
+     .section-container h3{
+         padding-top: 70px;
+         padding-left: 30px;
+         color: #ffffff;
+         font-size: 20px;
+         text-shadow: 2px 2px #000000;
+     }
+     .section-container h4{
+         padding-top: 5px;
+         padding-left: 40px;
+         color: #ffffff;
+         text-shadow: 2px 2px #000000;
+     }
+ } 
+   @media only screen and (min-width: 769px) {g
+
+    .head-container{
+         width: 100%;
+         height: 50vh;
+         background-color: #680909;
+         -webkit-animation: mymoves 5s infinite;
+         display: flex;
+         justify-content:center;
+         align-items: center;
+    }
+    .head-container img{
+        margin-top: 100px;
+        margin-right: 20px;
+         width: 200px;
+         justify-content: center;
+         box-shadow: 2px #000000;
+     }
+     .btns{
+         display: flex;
+         margin-right: 100px;
+     }
+     .head-container button{
+         margin-top: 200px;
+         width: 150px;
+         height: 40px;
+         border:1px solid #ffffff;;
+         border-radius: 30px;
+         color:#680909;
+         background-color: white;
+         font-weight: bold;
+     }
+     .head-container h2{
+         margin-left: 30px;
+         padding-top: 30px;
+         font-size: 30px;
+         color: #ffffff;
+     }
+     .head-container p{
+         padding-top: 20px;
+         font-size: 15px;
+         padding-bottom: 50px;
+         color: #ffffff;
+         padding-left: 30px;
+     }
+  
+     .section-container{
+         margin-top: 70px;
+         height: 100%;
+         display: flex;
+         justify-content: space-evenly;
+         margin-right: 20px;
+     } 
+     .section-container h1{
+        color: #680909;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    .section-container h1{
+        color: #680909;
+    } 
+ 
+     .section-container div{
+         height: 200px;
+         width: 200px;
+         margin-top: 70px;
+         margin-left: 20px;
+         margin-bottom: 30px;
+         border-radius: 50%;
+         border: 2px thick rgb(85, 16, 16);
+         background-color: rgb(85, 16, 16);
+         box-shadow: 0px 0px 10px rgb(85, 16, 16) ;
+         position: relative;
+     }
+     
+     .section-container img{
+         width: 100px;
+         height: 100px;
+         padding-bottom: 20px;
+         transform: translateX(120px);
+         border-radius: 50%;
+         position: absolute;
+         background-color: white;
+         box-shadow: 0px 0px 10px rgb(85, 16, 16) ;
+     }
+     .section-container h3{
+         padding-top: 70px;
+         padding-left: 30px;
+         color: #ffffff;
+         font-size: 25px;
+         text-shadow: 2px 2px #000000;
+     }
+     .section-container h4{
+         padding-top: 5px;
+         padding-left: 50px;
+         color: #ffffff;
+         text-shadow: 2px 2px #000000;
+     }
+ }   
+

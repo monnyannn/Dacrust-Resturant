@@ -1,0 +1,414 @@
+<template>
+  <div>
+    <!-- header -->
+    <header>
+      <div class="app-name">
+        <h3>
+          Da Crust <sup><img src="images/star.png" alt="" width="15"/></sup>
+        </h3>
+
+        <!-- navbar -->
+        <nav class="navbar">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="book.html">Order Online</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- menu -->
+    <!--  Start Contact Section -->
+    <section class="contact">
+      <!-- <div> -->
+      <div class="contact-us">
+        <h4>
+          CONTACT US
+        </h4>
+        <br />
+        <br />
+        <p class="drop-a-line">DROP US A LINE AND WE'LL GET BACK TO YOU</p>
+        <br />
+        <br />
+        <form action="">
+          <div class="info">
+            <label for="firstname">
+              First Name
+            </label>
+            <br />
+
+            <label for="firstname">
+              Last Name
+            </label>
+            <br />
+          </div>
+          <div class="info">
+            <input
+              type="text"
+              required=""
+              autofocus=""
+              class="message-section-input"
+            />
+            <br />
+            <input
+              type="text"
+              required=""
+              autofocus=""
+              class="message-section-input"
+            />
+            <br />
+          </div>
+          <br />
+          <br />
+          <br />
+          <div class="info">
+            <label for="lastname">
+              Email*
+            </label>
+            <br />
+
+            <label for="subject">
+              Subject
+            </label>
+            <br />
+          </div>
+          <div class="info">
+            <input
+              type="email"
+              required=""
+              autofocus=""
+              class="message-section-input"
+            />
+            <br />
+            <input
+              type="text"
+              required=""
+              autofocus=""
+              class="message-section-input"
+            />
+            <br />
+          </div>
+          <br />
+          <br />
+
+          <label for="message">
+            Leave us a message...
+          </label>
+          <br />
+          <br />
+
+          <div class="message-section">
+            <input
+              type="text"
+              required=""
+              autofocus=""
+              class="message-section-input"
+            />
+
+            <button type="button">Submit</button>
+          </div>
+        </form>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br /><br />
+        <br />
+        <br />
+        <br />
+      </div>
+
+      <!--  -->
+      <div class="contact-us">
+        <h4>WE'RE OPEN</h4>
+        <br />
+        <br />
+        <p>Monday-Friday: 11am -10pm</p>
+        <p>Saturday-Sunday: 11am -12am</p>
+        <br />
+        <br />
+        <br />
+        <p>500 Terry rancois Street,</p>
+        <p>
+          San Francisco, CA 94158
+        </p>
+        <br />
+        <br />
+        <br />
+
+        <p>
+          Tel: 123-456-7890
+        </p>
+        <p>Email:info@mysite.com</p>
+        <br />
+
+        <div class="social-icons">
+          <img src="/images/social-icon-fb.png" alt="" width="20px" />
+          <img src="/images/social-icon-ig.png" alt="" width="20px" />
+          <img src="/images/social-icon-tw.png" alt="" width="20px" />
+        </div>
+      </div>
+      <br />
+      <!-- </div> -->
+    </section>
+
+    <!-- End Contact Section -->
+
+    <!-- Footer -->
+    <footer>
+      <p>
+        © Copyright 2022
+      </p>
+    </footer>
+    <!-- End Footer -->
+  </div>
+</template>
+<script>
+export default {};
+</script>
+<style scoped>
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.app-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #dc2802;
+  height: inherit;
+  padding-top: 40px;
+  padding-left: 70px;
+  text-transform: uppercase;
+  font-weight: 1px;
+  letter-spacing: 1px;
+}
+.bg-color-red {
+  background-color: #dc2802;
+}
+
+.text-pry {
+  color: #dc2802;
+}
+
+/* na { 
+            margin-bottom: 30px;
+            ;
+        } */
+
+.navbar ul {
+  display: flex;
+  background-color: #ffffff;
+  color: #000000;
+  width: 100%;
+  font-size: 18px;
+  padding: 0 30px;
+  position: inherit;
+  left: 0;
+  font-family: "Roboto";
+}
+
+.navbar ul li {
+  padding: 10px 20px;
+}
+
+.navbar ul {
+  float: right;
+  list-style: none;
+  height: inherit;
+  line-height: inherit;
+  padding: 0 50px;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar ul li a {
+  display: block;
+  text-align: center;
+  min-width: 120px;
+  padding: 0 30px;
+}
+
+.navbar ul li a:hover {
+  color: #dc2802;
+}
+
+.form-table {
+  width: 30%;
+  align-content: center;
+  margin-left: 500px;
+  margin-top: 30px;
+}
+
+legend {
+  font-weight: bold;
+}
+
+input {
+  text-align: center;
+  height: 30px;
+  margin-bottom: 20px;
+}
+
+.fullname {
+  display: flex;
+}
+
+.feedbackform {
+  width: 800px;
+  background-color: #dc2802;
+  margin: auto;
+  color: #ffffff;
+  padding: 10px 0px 10px 0px;
+  text-align: center;
+  border-radius: 15px 15px 0px 0px;
+}
+
+/* Start Contact Section */
+.contact {
+  display: flex;
+  background-color: #eeeeee;
+}
+
+.contact-us {
+  margin: 10px 100px;
+}
+
+.contact-us p {
+  font-size: 20px;
+}
+
+input {
+  background-color: transparent;
+  border-bottom: 2px solid black;
+}
+
+.message-section {
+  display: flex;
+}
+
+.info {
+  display: flex;
+}
+
+.info label {
+  padding-right: 200px;
+}
+
+.info input {
+  margin-right: 30px;
+  height: 30px;
+}
+
+.message-section-input {
+  margin-right: 20px;
+  width: 100%;
+  background: transparent;
+  border-bottom: 2px solid black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  outline: none;
+}
+
+.full-menu-button {
+  padding: 10px 20px;
+  background: #df2222;
+  color: #ffffff;
+  border: 1px solid transparent;
+  font-size: 20px;
+  outline: none;
+  transition: all 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
+.full-menu-button:hover {
+  padding: 10px 20px;
+  background: #ffffff;
+  color: #df2222;
+  border: 1px solid #df2222;
+  font-size: 20px;
+}
+
+.message-section button {
+  padding: 18px 45px;
+  background: transparent;
+  color: black;
+  border: 2px solid black;
+  font-size: 20px;
+  transition: all 0.8s;
+  transition-timing-function: ease-in-out;
+}
+
+.message-section button:hover {
+  padding: 10px 20px;
+  background: #df2222;
+  color: black;
+  border: 1px solid black;
+  font-size: 20px;
+}
+
+.contact {
+  background: #ffffff;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.contact-us {
+  margin-top: 80px;
+}
+
+.contact h4 {
+  font-size: 30px;
+  /* text-align: center; */
+}
+
+.contact label {
+  font-size: 22px;
+}
+
+.drop-a-line {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.social-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 20px;
+}
+
+/* End Contact Session */
+
+/* Footer */
+footer {
+  background-color: #dc2802;
+  width: 100vw;
+  height: 30px;
+}
+
+footer p {
+  padding-top: 10px;
+  padding-bottom: 15px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* End Footer */
+</style>
